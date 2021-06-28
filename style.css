@@ -1,0 +1,60 @@
+.upperBar{
+			background-color : white;
+			height : 60px;
+			width : 100vw;
+			display : flex;
+			flex-direction : row;
+			justify-content : space-between;
+		}
+		
+		a { 
+			text-decoration:none !important 
+		} 
+		
+		a:link {
+  		color : #000000;
+			text-decoration:none !important; 
+		}
+		a:visited {
+			color : #000000;
+			text-decoration:none !important; 
+		}
+		a:hover {
+  		color : #000000;
+			text-decoration:none !important;
+		}
+		a:active {
+ 		 color : #000000;
+		 text-decoration:none !important;
+		}
+		
+		@media screen and (max-width : 1920px){
+		
+			.nameTag{
+				font-size : 18px;
+				margin-left : 80px;
+			}
+		
+			.search{
+				position: relative;
+  			top: 25%;
+				margin-right : 80px;
+			}
+		}
+		
+		@media screen and (max-width : 640px){
+			
+			.nametagWrapper{
+				position : relative;
+				width : 100vw;
+				text-align : center;
+			}
+			
+			.nameTag{
+				font-size : 18px;
+			}
+		
+			.search{
+				display : none;
+			}
+		}

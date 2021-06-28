@@ -1,0 +1,94 @@
+<!DOCTYPE.html>
+
+<html>
+<head>
+  <title>[##_page_title_##]</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.upperBar{
+			background-color : white;
+			height : 60px;
+			width : 100vw;
+			display : flex;
+			flex-direction : row;
+			justify-content : space-between;
+		}
+		
+		a { 
+			text-decoration:none !important 
+		} 
+		
+		a:link {
+  		color : #000000;
+			text-decoration:none !important; 
+		}
+		a:visited {
+			color : #000000;
+			text-decoration:none !important; 
+		}
+		a:hover {
+  		color : #000000;
+			text-decoration:none !important;
+		}
+		a:active {
+ 		 color : #000000;
+		 text-decoration:none !important;
+		}
+		
+		@media screen and (max-width : 1920px){
+		
+			.nameTag{
+				font-size : 18px;
+				margin-left : 80px;
+			}
+		
+			.search{
+				position: relative;
+  			top: 25%;
+				margin-right : 80px;
+			}
+		}
+		
+		@media screen and (max-width : 640px){
+			
+			.nametagWrapper{
+				position : relative;
+				width : 100vw;
+				text-align : center;
+			}
+			
+			.nameTag{
+				font-size : 18px;
+			}
+		
+			.search{
+				display : none;
+			}
+		}
+		
+	</style>
+</head>
+<body id='[##_body_id_##]'>
+<s_t3>
+	<header>
+  <div class = "upperBar">
+		<div class = "nameTagWrapper">
+			<h3 class = "nameTag">
+    		<a href="[##_blog_link_##]">[##_blogger_##]'s TistoryBlog</a>
+			</h3>
+		</div>
+    <!-- 블로그 홈/목록 상단 치환자 -->
+		<div class="search"> 
+        <s_search>
+            <input type="text" onkeypress="if (event.keyCode == 13) { try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%50');document.getElementsByName('search')[0].value = ''; return false;}catch(e){} }" placeholder="search..." name="search" style="width:160px; height:25px; border:0px; border-bottom : 1px solid black;">
+            <input type="image" src="/images/searchIcon.png" onclick="try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%25');document.getElementsByName('search')[0].value = ''; return false;}catch(e){}" value = " " style="background-color:#FFFFFF; border-width : 0px;">
+        </s_search>
+    </div>
+
+  </div>
+	</header>
+	[##_revenue_list_upper_##]
+	
+</s_t3>
+</body>
+</html>
