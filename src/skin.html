@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>[##_page_title_##]</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body id='[##_body_id_##]'>
+<s_t3>
+	<header>
+	<!-- 상단 네비게이션 바 -->
+  <div class = "upperBar">
+		<div class = "nameTagWrapper">
+			<h3 class = "nameTag">
+    		<a href="[##_blog_link_##]">[##_blogger_##]'s TistoryBlog</a>
+			</h3>
+		</div>
+    <!-- 검색 바 -->
+		<div class="search"> 
+        <s_search>
+            <input type="text" onkeypress="if (event.keyCode == 13) { try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%50');document.getElementsByName('search')[0].value = ''; return false;}catch(e){} }" placeholder="search..." name="search" style="width:160px; height:25px; border:0px; border-bottom : 1px solid black;">
+            <input type="image" src="/images/searchIcon.png" onclick="try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%25');document.getElementsByName('search')[0].value = ''; return false;}catch(e){}" value = " " style="background-color:#FFFFFF; border-width : 0px;">
+        </s_search>
+    </div>
+
+  </div>
+	</header>
+	
+	<div class = "sidebar">
+		<div class = "profileLayer">
+				<div><img src = "[##_image_##]" class = "profileLayerImage"/></div>
+			<div class = "profileLayerNameTag"><b>[##_blogger_##]</b></div>
+		</div>
+	</div>
+	
+</s_t3>
+</body>
+</html>
