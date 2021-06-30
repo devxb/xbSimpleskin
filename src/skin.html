@@ -3,34 +3,128 @@
   <title>[##_page_title_##]</title>
 	<link rel="stylesheet" href="style.css">
 </head>
-<body id='[##_body_id_##]'>
+<body id='[##_body_id_##]' style = "background-color : rgb(255,255,255)">
 <s_t3>
 	<header>
 	<!-- 상단 네비게이션 바 -->
   <div class = "upperBar">
-		<div class = "nameTagWrapper">
-			<h3 class = "nameTag">
-    		<a href="[##_blog_link_##]">[##_blogger_##]'s TistoryBlog</a>
+			<h3 class = "blogName">
+    		<a href="[##_blog_link_##]">[##_body_id_##]</a>
 			</h3>
-		</div>
     <!-- 검색 바 -->
 		<div class="search"> 
         <s_search>
-            <input type="text" onkeypress="if (event.keyCode == 13) { try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%50');document.getElementsByName('search')[0].value = ''; return false;}catch(e){} }" placeholder="search..." name="search" style="width:160px; height:25px; border:0px; border-bottom : 1px solid black;">
+            <input type="text" onkeypress="if (event.keyCode == 13) { try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%50');document.getElementsByName('search')[0].value = ''; return false;}catch(e){} }" placeholder="search..." name="search" style="width:195px; height:25px; border:0px; border-bottom : 1px solid black;">
             <input type="image" src="/images/searchIcon.png" onclick="try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%25');document.getElementsByName('search')[0].value = ''; return false;}catch(e){}" value = " " style="background-color:#FFFFFF; border-width : 0px;">
         </s_search>
     </div>
 
   </div>
 	</header>
-	
-	<div class = "sidebar">
-		<div class = "profileLayer">
-				<div><img src = "[##_image_##]" class = "profileLayerImage"/></div>
-			<div class = "profileLayerNameTag"><b>[##_blogger_##]</b></div>
+	<div class = "index">
+		<div class = "indexLayerWrapper">
+			<div class = "indexLayer">
+				<s_article_rep>
+				
+						<s_index_article_rep>
+							<a href = "[##_article_rep_link_##]" class = "articleLink">
+								<!-- 디자인 -->
+								<div class = "articleLayer">
+									<!-- article header -->
+									<div class = "articleHeader">
+										<s_article_rep_thumbnail>
+      								<img class = "articleImage" src="[##_article_rep_thumbnail_url_##]">
+    								</s_article_rep_thumbnail>
+										<span class = "articleTitle">[##_article_rep_title_##]</span>
+									</div>
+									<!-- END article header -->
+									<!-- article body -->
+									<div class = "articleBody">
+										<div class = "articleBodyTitle">[##_article_rep_title_##]</div>
+										<div class = "articleBodyText"> [##_article_rep_summary_##] </div>
+									</div>
+									<!-- END article body -->
+									<!-- article tail-->
+									<div class = "articleBodyTail">
+										<span class = "articleCategory">[##_article_rep_category_##] </span>
+										<span class = "articleDate">[##_article_rep_simple_date_##]</span>
+										<span class = "articleCategory"> [##_article_rep_author_##] </span>
+										<s_rp_count>
+											<span class = "articleCategory"> [##_article_rep_rp_cnt_##] </span>	
+										</s_rp_count>
+									</div>
+									<!-- END article tail -->
+								</div>
+								<!-- END 디자인 -->
+							</a>
+						</s_index_article_rep>
+				</s_article_rep>
+			</div>
 		</div>
+		
+	<div class = "sidebar">
+		
+		<div class = "profileLayer">
+			<div><img src = "[##_image_##]" class = "profileLayerImage"/></div>
+			
+			<div class = "profileLayerNameTag"><b>[##_blogger_##]</b></div>
+			<br>
+			<div class = "profileLayerBlogInfo">[##_desc_##]</div>
+		</div>
+		
+		<div class = "cardLayer">
+			<!-- 카드 템플릿 아래에 복붙으로 적용가능
+			<a href = "이동할 사이트 주소" class = "card">
+				<img src = "이미지 링크" class = "cardImage"/>
+				<div class = "cardLetter">
+					<div><b style = "font-size:14px"> 프로젝트 이름</b><br><div style = "font-size: 12px"> 설명 </div></div>
+				</div>
+			</a>
+			-->
+			
+			<!-- card -->
+			<a href = "https://github.com/devxb" class = "card">
+				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
+				<div class = "cardLetter">
+					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
+				</div>
+			</a>
+			
+			<!-- card -->
+			<a href = "https://github.com/devxb" class = "card">
+				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
+				<div class = "cardLetter">
+					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
+				</div>
+			</a>
+			
+			<!-- card -->
+			<a href = "https://github.com/devxb" class = "card">
+				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
+				<div class = "cardLetter">
+					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
+				</div>
+			</a>
+			
+			<!-- card -->
+			<a href = "https://github.com/devxb" class = "card">
+				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
+				<div class = "cardLetter">
+					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
+				</div>
+			</a>
+			
+			<!-- card -->
+			<a href = "https://github.com/devxb" class = "card">
+				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
+				<div class = "cardLetter">
+					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
+				</div>
+			</a>
+		</div>
+		
 	</div>
-	
+	</div>
 </s_t3>
 </body>
 </html>
