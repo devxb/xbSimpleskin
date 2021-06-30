@@ -1,10 +1,35 @@
-.upperBar{
+<style>
+		
+		@keyframes slideLeft{
+			0%{
+				margin-top : 10px;
+				margin-bottom : 0px;
+			}
+			100%{
+				margin-top : -20px;
+				margin-bottom : 30px;
+			}
+		}
+		
+		@keyframe articleImageGrow{
+			0%{
+				width : 40px;
+				height : 40px;
+			}
+			100%{
+				width : 100px;
+				height : 100px;
+			}
+		}
+		
+		.upperBar{
 			background-color : white;
 			height : 60px;
 			width : 100%;
 			display : flex;
 			flex-direction : row;
 			justify-content : space-between;
+			border-bottom: 1px solid rgb(0,0,0,0.3);
 		}
 		
 		a { 
@@ -27,7 +52,18 @@
 		 text-decoration:none !important;
 		}
 		
-		.nameTag{
+		.index{
+			display : flex;
+			flex-direction : row;
+			flex-wrap : nowrap;
+			height : 92%;
+			margin-left : 80px;
+			margin-right : 80px;
+			margin-top : 10px;
+			justify-content : center;
+		}
+		
+		.blogName{
 			font-size : 18px;
 			margin-left : 80px;
 		}
@@ -38,20 +74,24 @@
 			margin-right : 80px;
 		}
 		
+		/* 사이드바 - 프로필 레이어, 카드 레이어 있음*/
 		.sidebar{
+			width : 300px;
 			text-align : right;
-			margin-right : 80px;
-			margin-top : 10px;
 		}
 		
+		/* 프로필 레이어 */
 		.profileLayer{
 			background-color : white;
 			border-radius : 10px;
-			width : 350px;
+			width : 100%;
+			margin-left : 5px;
+			max-width : 300px;
 			height : 85px;
 			display : inline-block;
 			box-shadow : 0px 0px 4px rgb(0,0,0,0.5);
 			text-align : left;
+			overflow : hidden;
 		}
 		
 		.profileLayerImage{
@@ -68,16 +108,220 @@
 			margin-left : 85px;
 			font-size : 18px;
 			display : inline-block;
+			overflow : hidden;
+			text-overflow: ellipsis;
+			white-space : nowrap;
 		}
 		
+		.profileLayerBlogInfo{
+			font-size : 15px;
+			color : #C4C4C4;
+			font-weight : 500;
+			display : inline-block;
+			margin-top : -30px;
+			margin-left : 85px;
+			overflow : hidden;
+			text-overflow: ellipsis;
+			white-space : nowrap;
+		}
+		
+		/* 카드 레이어 */
+		.cardLayer{
+			position : relative;
+			width : 100%;
+			padding : 0px 5px 0px 5px;
+			overflow-y : scroll;
+			-ms-overflow-style: none;
+			display : inline-block;
+			max-height : 90%;
+			z-index : 0;
+		}
+		
+		.cardLayer::-webkit-scrollbar { 
+    	display: none;
+    	width: 0 !important;
+		}
+		
+		.card{
+			position : relative;
+			z-index : 0;
+			display : inline-block;
+			border-radius : 10px;
+			margin-top : 10px;
+			width : 100%;
+			max-width : 300px;
+			height : 200px;
+			background-color : white;
+			box-shadow : 0px 0px 4px rgb(0,0,0,0.5);
+		}
+		
+		.card:hover{
+			margin-top : -20px;
+			margin-bottom : 30px;
+			animation : slideLeft 0.5s;
+			z-index : 1;
+		}
+		
+		.cardImage{
+			display: block;
+			overflow-y : scroll;
+			border-radius : 10px 10px 0px 0px;
+			margin-top : 0px;
+			width : 100%;
+			height : 140px;
+			
+			object-fit : contain;
+		}
+		
+		.cardLetter{
+			display : block;
+			overflow : hidden;
+			border-radius : 0px 0px 10px 10px;
+			padding : 0px 0px 0px 5px;
+			margin-top : 0px;
+			width : auto;
+			height : 60px;
+			text-align : left;
+			font-size : 13px;
+		}
+		
+		/* 인덱스 페이지 */
+		
+		.indexLayerWrapper{
+			width : 90%;
+			height : 100%;
+			background-color : white;
+			-ms-overflow-style: none;
+			overflow : scroll;
+		}
+		
+		.indexLayerWrapper::-webkit-scrollbar { 
+    	display: none;
+    	width: 0 !important;
+		}
+		
+		.indexLayer{
+			width : 100%;
+			height : 100%;
+			background-color : white;
+			display : flex;
+			flex-wrap: wrap;
+			align-content: flex-start;
+			flex : 200px;
+		}
+		
+		.articleLink{
+			width : 200px;
+			height : 230px;
+			border-radius : 10px;
+			margin-left : 6px;
+			margin-top : 6px;
+		}
+		
+		.articleLayer{
+			position : relative;
+			border-radius : 10px;
+			width : 200px;
+			height : 230px;
+			background-color : white;
+			box-shadow : 0px 0px 4px rgb(0,0,0,0.5);
+			z-index : 0;
+		}
+		
+		.articleLayer:hover{
+			width : 380px;
+			height : 437px;
+			z-index : 1;
+		}
+		
+		.articleHeader{
+			display : flex;
+			justify-content : center;
+			height : 23%;
+			width : 100%;
+		}
+		
+		.articleTitle{
+			margin-top : 15px;
+			margin-left : 2px;
+			font-size : 16px;
+			font-weight : 600;
+			width : 75%;
+			height : 100%;
+			text-align : center;
+			overflow : hidden;
+			text-overflow: ellipsis;
+			white-space : nowrap;
+		}
+		
+		.articleImage{
+			border-radius : 50px;
+			width : 40px;
+			height : 40px;
+			margin-top : 6px;
+			margin-left : 6px;
+			box-shadow : 0px 0px 2px rgb(0,0,0,0.5);
+			overflow : hidden;
+			object-fit : contain;
+		}
+		
+		.articleBody{
+			margin-left : 6px;
+			width : 94%;
+			height : 62%;
+			overflow : hidden;
+		}
+		
+		.articleBodyTitle{
+			color : #C9C9C9;
+			font-weight : 600;
+			font-size : 12px;
+		}
+		
+		.articleBodyText{
+			color : #000000;
+			font-weight : 400;
+			font-size : 13px;
+		}
+		
+		.articleBodyTail{
+			margin-top : 6px;
+			margin-left : 6px;
+			width : 94%;
+			height : 13%;
+			overflow : hidden;
+		}
+		
+		.articleDate{
+			color : #C9C9C9;
+			font-size : 12px;
+			font-weight : 600;
+		}
+		
+		.articleCategory{
+			color : #C9C9C9;
+			font-size : 12px;
+			font-weight : 600;
+		}
+		
+		/* 모바일 */
 		@media screen and (max-width : 640px){
+			.index{
+				margin-left : 0px;
+				margin-right : 0px;
+			}
+			
+			.indexLayer{
+				width : 100vw;
+				min-width : 0px;
+			}
 			
 			.nametagWrapper{
 				width : 100vw;
 				text-align : center;
 			}
 			
-			.nameTag{
+			.blogName{
 				font-size : 18px;
 				text-align : center;
 				margin-left : 0px;
@@ -87,5 +331,15 @@
 				display : none;
 			}
 			
+			.sidebar{
+				display : none;
+			}
+			
+			.indexLayer{
+				align-content: flex-start;
+			}
 		}
 		
+		
+		
+	</style>
