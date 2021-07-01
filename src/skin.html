@@ -9,7 +9,7 @@
 	<!-- 상단 네비게이션 바 -->
   <div class = "upperBar">
 			<h3 class = "blogName">
-    		<a href="[##_blog_link_##]">[##_body_id_##]</a>
+    		<a href="[##_blog_link_##]">[##_title_##]</a>
 			</h3>
     <!-- 검색 바 -->
 		<div class="search"> 
@@ -21,47 +21,87 @@
 
   </div>
 	</header>
+	<div class = "bodyLayer">
 	<div class = "index">
 		<div class = "indexLayerWrapper">
 			<div class = "indexLayer">
 				<s_article_rep>
-				
 						<s_index_article_rep>
 							<a href = "[##_article_rep_link_##]" class = "articleLink">
 								<!-- 디자인 -->
 								<div class = "articleLayer">
-									<!-- article header -->
-									<div class = "articleHeader">
-										<s_article_rep_thumbnail>
+									<s_article_rep_thumbnail>
       								<img class = "articleImage" src="[##_article_rep_thumbnail_url_##]">
     								</s_article_rep_thumbnail>
-										<span class = "articleTitle">[##_article_rep_title_##]</span>
-									</div>
-									<!-- END article header -->
-									<!-- article body -->
-									<div class = "articleBody">
-										<div class = "articleBodyTitle">[##_article_rep_title_##]</div>
-										<div class = "articleBodyText"> [##_article_rep_summary_##] </div>
+									<!-- article header -->
+									<div class = "articleText">
+										<div class = "articleHeader">
+											<span class = "articleTitle">[##_article_rep_title_##]</span>
+										</div>
+										<!-- END article header -->
+										<!-- article body -->
+										<div class = "articleBody">
+											<!--
+											<div class = "articleBodyTitle">[##_article_rep_title_##]</div>
+											-->
+											<div class = "articleBodyText"> [##_article_rep_summary_##] </div>
+										</div>
+										<!-- article tail-->
+										<div class = "articleBodyTail">
+											<span class = "articleCategory"> [##_article_rep_category_##] | </span>
+											<span class = "articleDate"> [##_article_rep_date_##]</span>
+										</div>
+									<!-- END article tail -->
 									</div>
 									<!-- END article body -->
-									<!-- article tail-->
-									<div class = "articleBodyTail">
-										<span class = "articleCategory">[##_article_rep_category_##] </span>
-										<span class = "articleDate">[##_article_rep_simple_date_##]</span>
-										<span class = "articleCategory"> [##_article_rep_author_##] </span>
-										<s_rp_count>
-											<span class = "articleCategory"> [##_article_rep_rp_cnt_##] </span>	
-										</s_rp_count>
-									</div>
-									<!-- END article tail -->
 								</div>
 								<!-- END 디자인 -->
 							</a>
 						</s_index_article_rep>
+					<!-- 본문 -->
+					<div class = "permalinkWrapper">
+						<s_permalink_article_rep>
+							<span class = "permalinkCategoryAndDate"> [article_rep_category] | [##_article_rep_date_##] </span> <br><br>
+							<span class = "permalinkTitle"> [##_article_rep_title_##] </span> <br><br>
+							<span class = "permalinkInfo"> [##_article_rep_author_##] | [##_article_rep_category_##] / [##_article_rep_date_##] |
+								<s_ad_div>
+      						<a href="[##_s_ad_m_link_##]">수정</a> | <a href="#" onclick="[##_s_ad_s2_onclick_##]"> [##_s_ad_s1_label_##] </a> |
+      						<a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+  							</s_ad_div>
+							</span>
+							<br><br>
+							<div class = "permalinkLine"></div>
+							<br><br>
+							<div class = "permalinkText"> [##_article_rep_desc_##] </div>
+							<br><br>
+						</s_permalink_article_rep>
+					</div>
+					<!-- END 본문 -->
 				</s_article_rep>
+				<div style = "width : 100%; display : flex; justify-content : center">
+				<s_paging>
+							<div>
+								<span>
+									<a [##_prev_page_##] class="[##_no_more_prev_##]"> ◀ PREV </a>
+									<s_paging_rep>
+										<a [##_paging_rep_link_##]>[##_paging_rep_link_num_##]</a>
+									</s_paging_rep>
+									<a [##_next_page_##] class="[##_no_more_next_##]"> NEXT ▶ </a>
+								</span>
+							</div>
+
+							<div>
+								<div>
+									<a [##_prev_page_##] class="[##_no_more_prev_##]">
+									</a>
+									<a [##_next_page_##] class="[##_no_more_next_##]">
+									</a>
+								</div>
+							</div>
+				</s_paging>
+				</div>
 			</div>
 		</div>
-		
 	<div class = "sidebar">
 		
 		<div class = "profileLayer">
@@ -70,25 +110,41 @@
 			<div class = "profileLayerNameTag"><b>[##_blogger_##]</b></div>
 			<br>
 			<div class = "profileLayerBlogInfo">[##_desc_##]</div>
+			<s_sidebar>
+				<!-- 카테고리 -->
+				<s_sidebar_element>
+					<!-- 카테고리 -->
+					<div class = "profileLayerCategory">
+						<h3 style = "text-align : left; margin-left : 20px;"> category </h3>
+						<div class = "categoryStyle">
+						<div style = "margin-left : 6px; margin-right : 6px; border-bottom : 1px solid #C9C9C9"></div>
+						[##_category_list_##]
+						</div>
+					</div>
+				</s_sidebar_element>
+				<!-- END 카테고리 -->
+			</s_sidebar>
 		</div>
 		
 		<div class = "cardLayer">
-			<!-- 카드 템플릿 아래에 복붙으로 적용가능
+			<!-- 카드 템플릿 아래에 복붙으로 적용가능-->
+			<!--
 			<a href = "이동할 사이트 주소" class = "card">
 				<img src = "이미지 링크" class = "cardImage"/>
 				<div class = "cardLetter">
-					<div><b style = "font-size:14px"> 프로젝트 이름</b><br><div style = "font-size: 12px"> 설명 </div></div>
+					<div><b style = "font-size:14px"> 카드 이름 </b><br><div style = "font-size: 12px"> 설명 </div></div>
 				</div>
 			</a>
 			-->
 			
 			<!-- card -->
-			<a href = "https://github.com/devxb" class = "card">
-				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
+			<a href = "https://github.com" class = "card">
+				<img src = "https://cdn.pixabay.com/photo/2014/07/15/23/36/github-394322_960_720.png" class = "cardImage"/>
 				<div class = "cardLetter">
-					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
+					<div><b style = "font-size:14px">[Github]</b><br><div style = "font-size: 12px">Devxb's Github</div></div>
 				</div>
 			</a>
+			<!-- END card -->
 			
 			<!-- card -->
 			<a href = "https://github.com/devxb" class = "card">
@@ -97,32 +153,11 @@
 					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
 				</div>
 			</a>
+			<!-- END card -->
 			
-			<!-- card -->
-			<a href = "https://github.com/devxb" class = "card">
-				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
-				<div class = "cardLetter">
-					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
-				</div>
-			</a>
-			
-			<!-- card -->
-			<a href = "https://github.com/devxb" class = "card">
-				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
-				<div class = "cardLetter">
-					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
-				</div>
-			</a>
-			
-			<!-- card -->
-			<a href = "https://github.com/devxb" class = "card">
-				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
-				<div class = "cardLetter">
-					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
-				</div>
-			</a>
 		</div>
 		
+	</div>
 	</div>
 	</div>
 </s_t3>
