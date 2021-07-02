@@ -31,8 +31,17 @@
     	width: 0 !important;
 		}
 		
+		input:focus {
+    	outline: none;
+		}
+		
+		textarea:focus {
+   	 outline: none;
+		}
+		
 		/* END body */
 		
+		/* upperBar */
 		.upperBar{
 			background-color : white;
 			height : 60px;
@@ -42,6 +51,56 @@
 			justify-content : space-between;
 			border-bottom: 1px solid rgb(0,0,0,0.3);
 		}
+		
+		.upperCategory{
+			margin-right : 80px;
+			overflow : visible;
+			z-index : 100;
+			display : table;
+			height : 100%;
+		}
+		
+		.upperCategoryText{
+			display : table-cell;
+			vertical-align : middle;
+			z-index : 200;
+		}
+		
+		.upperinput {
+			display : none;
+		}
+
+		.upperlabel {
+    	cursor: pointer;
+			font-family : 'Noto Sans KR', sans-serif;
+			font-weight : 500;
+			font-size : 15px;
+		}
+
+		.submenu {
+    	display : none;
+    	background: white;
+			height : auto;
+			width : auto;
+			padding : 5px 5px 5px 5px;
+			margin-top : 40px;
+			box-shadow : 0px 0px 5px rgb(0,0,0,0.5);
+			font-family : 'Noto Sans KR', sans-serif;
+			font-size : 12px;
+			font-weight : 300;
+			text-align : left;
+		}
+		
+		#menuBtn:checked ~ .upperCategoryText {
+    	position : absolute;
+			margin-top : 21px;
+		}
+		
+		#menuBtn:checked ~ .submenu {
+    	display: inline-block;
+		}
+		
+		/* END upperBar */
 		
 		a { 
 			text-decoration:none !important 
@@ -86,12 +145,6 @@
 			margin-left : 80px;
 		}
 		
-		.search{
-			position: relative;
-  		top: 25%;
-			margin-right : 80px;
-		}
-		
 		/* 사이드바 - 프로필 레이어, 카드 레이어 있음*/
 		
 		.sidebar{
@@ -107,7 +160,7 @@
 			margin-left : 5px;
 			max-width : 300px;
 			height : 85px;
-			display : inline-block;
+			display : flex;
 			box-shadow : 0px 0px 2px rgb(0,0,0,0.5);
 			text-align : left;
 			overflow : hidden;
@@ -121,43 +174,18 @@
 		}
 		
 		.profileLayerImage{
-			width : 65px;
 			height : 65px;
-			display : inline-block;
+			width : 65px;
 			border-radius : 50px;
-			margin-top : 10px;
-			margin-left : 10px;
 		}
 		
 		.profileLayerNameTag{
-			margin-top : -55px;
-			margin-left : 85px;
 			font-family : 'Noto Sans KR', sans-serif;
-			font-size : 18px;
-			display : inline-block;
+			font-weight : 500;
+			font-size : 16px;
+			display : table-cell;
+			vertical-align : middle;
 			overflow : hidden;
-			text-overflow: ellipsis;
-			white-space : nowrap;
-		}
-		
-		.profileLayerBlogInfo{
-			font-family : 'Noto Sans KR', sans-serif;
-			font-weight : 300;
-			font-size : 15px;
-			color : #C4C4C4;
-			display : inline-block;
-			margin-top : -30px;
-			margin-left : 85px;
-			overflow : hidden;
-			text-overflow: ellipsis;
-			white-space : nowrap;
-		}
-		
-		.categoryStyle{
-			text-align : left;
-			font-family : 'Noto Sans KR', sans-serif;
-			font-weight 300;
-			font-size : 12px;
 		}
 		
 		/* 카드 레이어 */
@@ -231,7 +259,8 @@
 			margin-right : 50px;
 			background-color : white;
 			-ms-overflow-style: none;
-			overflow : scroll;
+			overflow-y : scroll;
+			word-break:break-all;
 		}
 		
 		.indexLayerWrapper::-webkit-scrollbar { 
@@ -246,7 +275,6 @@
 			display : flex;
 			flex-wrap: wrap;
 			align-content: flex-start;
-			flex : 200px;
 		}
 		
 		.articleLink{
@@ -254,7 +282,8 @@
 			height : 230px;
 			border-radius : 5px;
 			margin-left : 6px;
-			margin-top : 6px;
+			display : inline-block;
+			/*margin-top : -20px;*/
 		}
 		
 		.articleLayer{
@@ -330,6 +359,7 @@
 			font-size : 13px;
 			display: table-cell; 
 			vertical-align: middle; 
+			word-break : break-all;
 			height: 130px;
 		}
 		
@@ -360,11 +390,11 @@
 		
 		.permalinkWrapper{
 			width : 100%;
-			text-align : center;
 			margin-top : 20px;
 		}
 		
 		.permalinkLine{
+			text-align : center;
 			border-bottom : 1px solid #C9C9C9;
 		}
 		
@@ -381,7 +411,7 @@
 			color : #000000;
 			width : 100%;
 			text-align : center;
-			font-size : 20px;
+			font-size : 25px;
 			font-family : 'Noto Sans KR', sans-serif;
 			font-weight : 600px;
 		}
@@ -398,10 +428,143 @@
 		.permalinkText{
 			color : #000000;
 			width : 100%;
+			height : auto;
 			font-family : 'Noto Sans KR', sans-serif;
 		}
 		
+		.permalinkTag{
+			color : #C9C9C9;
+			text-align : left;
+			font-size : 14px;
+			font-family : 'Noto Sans KR', sans-serif;
+			font-weight: 500px;
+		}
+		
+		.permalinkBottom{
+			display : flex;
+			flex-direction : column;
+			justify-content : center;
+		}
+		
+		.permalinkComment{
+			width : 100%;
+			display : flex;
+			flex-direction : column;
+		}
+		
+		.permalinkCommentInput{
+			width : 100%;
+			height : 100px;
+			border : 1px solid #C9C9C9;
+			align-self : center;
+			resize : none;
+			font-family : 'Noto Sans KR', sans-serif;
+			font-weight : 200px;
+			color : black;
+		}
+		
+		.permalinkCommentSubmit{
+			width : auto;
+			height : 40px;
+			background-color : white;
+			font-family : 'Noto Sans KR', sans-serif;
+			font-weight : 300px;
+			border : 1px solid #C9C9C9;
+			margin-right : 0px;
+			text-align : center;
+		}
+		
+		.permalinkCommentSubmit:hover{
+			color : white;
+			background-color : black;
+			border : 1px solid white;
+		}
+		
+		.permalinkCommentTitle{
+			width : 99%;
+			align-self : center;
+			background-color : white;
+			text-align : left;
+			font-family : 'Noto Sans KR', sans-serif;
+			font-weight : 300px;
+		}
+		
+		/* 사용자 댓글 */
+		
+		.userComment{
+			display : flex;
+			flex-direction : column;
+			justify-content : center;
+			width : 100%;
+			height : auto;
+			border-bottom : 1px solid #C9C9C9;
+			padding-top : 5px;
+			padding-bottom : 5px;
+		}
+		
+		.userComment:hover{
+			border-bottom : 1px solid rgb(0,0,0,0);
+			box-shadow : 0px 0px 2px rgb(0,0,0,0.5);
+		}
+		
+		.userCommentReply:hover{
+			border-bottom : 1px solid rgb(0,0,0,0.2);
+			border-top: 1px solid rgb(0,0,0,0.2);
+		}
+		
+		.userCommentHeader{
+			width : 100%;
+			padding-top : 5px;
+			padding-bottom : 5px;
+			height : 25px;
+			display : flex;
+			justify-content : left;
+			font-family : 'Noto Sans KR', sans-serif;
+			font-weight : 300px;
+			font-size : 14px;
+		}
+		
+		.userCommentHeaderLogo{
+			overflow : hidden;
+			border-radius : 50px;
+			width : 45px;
+			height : 45px;
+		}
+		
+		.userCommentHeaderNameWrapper{
+			display : table;
+			width : 100%;
+			margin-left : 10px;
+		}
+		
+		.userCommentHeaderName{
+			height : 25px;
+			width : 100%;
+			display: table-cell; 
+			vertical-align: middle;
+			word-break : break-all;
+		}
+		
+		.userCommentBody{
+			padding-bottom : 5px;
+			height : auto;
+			margin-left : 55px;
+			font-family : 'Noto Sans KR', sans-serif;
+			font-weight : 400;
+			font-size : 12px;
+		}
+		
+		.commentControl{
+			width : 100%;
+			text-align : right;
+			font-family : 'Noto Sans KR', sans-serif;
+			font-weight : 400;
+			font-size : 12px;
+			color : #C9C9C9;
+		}
+		
 		/* 모바일 */
+		/*
 		@media screen and (max-width : 640px){
 			
 			.index{
@@ -410,7 +573,7 @@
 			}
 			
 			.indexLayer{
-				width :90vw;
+				width : 90%
 				min-width : 0px;
 			}
 			
@@ -426,10 +589,6 @@
 				margin-left : 0px;
 			}
 			
-			.search{
-				display : none;
-			}
-			
 			.sidebar{
 				display : none;
 			}
@@ -439,8 +598,9 @@
 			}
 			
 			.indexLayerWrapper{
+				margin-left : 0px; 
 				margin-right : 0px;
 			}
 			
 		}
-		
+		*/
