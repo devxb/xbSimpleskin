@@ -9,16 +9,20 @@
 	<!-- 상단 네비게이션 바 -->
   <div class = "upperBar">
 			<h3 class = "blogName">
-    		<a href="[##_blog_link_##]">[##_title_##]</a>
+    		<a href="[##_blog_link_##]" class = "link">[##_title_##]</a>
 			</h3>
     <!-- 검색 바 -->
-		<div class="search"> 
-        <s_search>
-            <input type="text" onkeypress="if (event.keyCode == 13) { try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%50');document.getElementsByName('search')[0].value = ''; return false;}catch(e){} }" placeholder="search..." name="search" style="width:195px; height:25px; border:0px; border-bottom : 1px solid black;">
-            <input type="image" src="/images/searchIcon.png" onclick="try{window.location.href='/search/' + document.getElementsByName('search')[0].value.replaceAll('%', '%25');document.getElementsByName('search')[0].value = ''; return false;}catch(e){}" value = " " style="background-color:#FFFFFF; border-width : 0px;">
-        </s_search>
-    </div>
-
+		<!--
+		<div class = upperCategory>
+		<input type="checkbox" id="menuBtn" class = "upperinput">
+      <div class = "upperCategoryText"> 
+				<label for="menuBtn" class="labelBtn upperlabel" onclick=""> Category </label> 
+			</div>
+         <div class="submenu">
+                [##_category_list_##]
+       	</div>
+		</div>
+		-->
   </div>
 	</header>
 	<div class = "bodyLayer">
@@ -27,7 +31,7 @@
 			<div class = "indexLayer">
 				<s_article_rep>
 						<s_index_article_rep>
-							<a href = "[##_article_rep_link_##]" class = "articleLink">
+							<a href = "[##_article_rep_link_##]" class = "articleLink link">
 								<!-- 디자인 -->
 								<div class = "articleLayer">
 									<s_article_rep_thumbnail>
@@ -61,32 +65,135 @@
 					<!-- 본문 -->
 					<div class = "permalinkWrapper">
 						<s_permalink_article_rep>
-							<span class = "permalinkCategoryAndDate"> [article_rep_category] | [##_article_rep_date_##] </span> <br><br>
+							<!-- 글 헤더 -->
+							<div style = "text-align : center;">
+							<span class = "permalinkCategoryAndDate"> [##_article_rep_category_##] | [##_article_rep_date_##] </span> <br><br>
 							<span class = "permalinkTitle"> [##_article_rep_title_##] </span> <br><br>
 							<span class = "permalinkInfo"> [##_article_rep_author_##] | [##_article_rep_category_##] / [##_article_rep_date_##] |
 								<s_ad_div>
-      						<a href="[##_s_ad_m_link_##]">수정</a> | <a href="#" onclick="[##_s_ad_s2_onclick_##]"> [##_s_ad_s1_label_##] </a> |
-      						<a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+      						<a href="[##_s_ad_m_link_##]" class = "link">수정</a> | <a href="#" onclick="[##_s_ad_s2_onclick_##]" class = "link"> [##_s_ad_s1_label_##] </a> |
+      						<a href="#" onclick="[##_s_ad_d_onclick_##]" class = "link">삭제</a>
   							</s_ad_div>
 							</span>
 							<br><br>
 							<div class = "permalinkLine"></div>
+							</div>
 							<br><br>
+							<!-- 글 본문 -->
 							<div class = "permalinkText"> [##_article_rep_desc_##] </div>
-							<br><br>
+							<!-- 글 바텀 -->
+							<div class = "permalinkBottom">
+								<!-- 글 태그 -->
+								<div style = "text-align : left;">
+									<s_tag_label>
+										<div class = "permalinkTag link">
+											TAG : <span class="link">[##_tag_label_rep_##]</span>
+										</div>
+									</s_tag_label> 
+								</div>
+								<!-- 글 댓글 -->
+								<s_rp>
+									<s_rp_input_form>
+  									<div style = "width : 100%;">
+    									<s_rp_member>
+      									<s_rp_guest>
+        									<p>
+          									<input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" />
+         										<label for="name"> : 이름 </label>
+        									</p>
+        									<p>
+          									<input type="password" maxlength="8" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" />
+          									<label for="password"> : 패스워드 </label>
+        									</p>
+        									<p>
+          									<input type="text" class="homepage" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" />
+          									<label for="homepage"> : 홈페이지 </label>
+        									</p>
+      									</s_rp_guest>
+      									<p class="secretWrap">
+        									<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" />
+        									<label for="secret"> 비밀글 </label>
+      									</p>
+    									</s_rp_member>
+										<p class = "permalinkCommentTitle"> 댓글 </p>
+    								<p style = "width : 100%; text-align : center">
+      								<textarea name="[##_rp_input_comment_##]" rows="10" cols="50" class = "permalinkCommentInput" style = "display:inline-block"></textarea>
+    								</p>
+    								<p style = "width : 100%; text-align : right">
+      								<input type="submit" value="댓글 달기" onclick="[##_rp_onclick_submit_##]" class = "permalinkCommentSubmit"/>
+    								</p>
+  									</div>
+									</s_rp_input_form>
+									<div class="commentList">
+  									<s_rp_container>
+      									<s_rp_rep>
+													<div class = "userComment">
+        										<div id='[##_rp_rep_id_##]'>
+          										<div class="[##_rp_rep_class_##]">
+																<div class = "userCommentHeader">
+            											<img src = [##_rp_rep_logo_##] class = "userCommentHeaderLogo"/>
+																	<div class = "userCommentHeaderNameWrapper">
+																		<div class = "userCommentHeaderName">
+            													[##_rp_rep_name_##]
+            													<span style = "color : #C9C9C9; font-size : 11px;">[##_rp_rep_date_##]</span>
+																		</div>
+																	</div>
+																</div>
+            										<div class = "userCommentBody">[##_rp_rep_desc_##]</div>
+																<div class="commentControl">
+              										<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;
+                										<span>수정/삭제</span>
+              										</a>
+              										<a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">&nbsp;
+                										<span>답글</span>
+              										</a>
+           											</div>
+          										</div>
+        										</div>
+													</div>
+													<s_rp2_container>
+              						<s_rp2_rep>
+                						<ul id='[##_rp_rep_id_##]'>
+                  						<div class="[##_rp_rep_class_##] userCommentReply">
+																<div class = "userCommentHeader">
+            											<img src = [##_rp_rep_logo_##] class = "userCommentHeaderLogo"/>
+																	<div class = "userCommentHeaderNameWrapper">
+																		<div class = "userCommentHeaderName">
+            													[##_rp_rep_name_##]
+            													<span style = "color : #C9C9C9; font-size : 11px;">[##_rp_rep_date_##]</span>
+																		</div>
+																	</div>
+																</div>
+            									<div class = "userCommentBody">[##_rp_rep_desc_##]</div>
+															<div class="commentControl">
+              									<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;
+                									<span>수정/삭제</span>
+              									</a>
+           										</div>
+          										</div>
+              							</ul>
+              						</s_rp2_rep>
+          							</s_rp2_container>
+      									</s_rp_rep>
+  									</s_rp_container>
+										
+									</div>
+								</s_rp>
+							</div>
 						</s_permalink_article_rep>
 					</div>
-					<!-- END 본문 -->
+					<!-- END 본문 -->	
 				</s_article_rep>
+				<br><br>
 				<div style = "width : 100%; display : flex; justify-content : center">
 				<s_paging>
 							<div>
 								<span>
-									<a [##_prev_page_##] class="[##_no_more_prev_##]"> ◀ PREV </a>
+									<a [##_prev_page_##] class="[##_no_more_prev_##] link"> ◀ PREV </a>
 									<s_paging_rep>
-										<a [##_paging_rep_link_##]>[##_paging_rep_link_num_##]</a>
+										<a [##_paging_rep_link_##] class = "link">[##_paging_rep_link_num_##]</a>
 									</s_paging_rep>
-									<a [##_next_page_##] class="[##_no_more_next_##]"> NEXT ▶ </a>
+									<a [##_next_page_##] class="[##_no_more_next_##] link"> NEXT ▶ </a>
 								</span>
 							</div>
 
@@ -103,33 +210,25 @@
 			</div>
 		</div>
 	<div class = "sidebar">
-		
+		<a href="[##_blog_link_##]" class = "link">
 		<div class = "profileLayer">
-			<div><img src = "[##_image_##]" class = "profileLayerImage"/></div>
-			
-			<div class = "profileLayerNameTag"><b>[##_blogger_##]</b></div>
-			<br>
-			<div class = "profileLayerBlogInfo">[##_desc_##]</div>
-			<s_sidebar>
-				<!-- 카테고리 -->
-				<s_sidebar_element>
-					<!-- 카테고리 -->
-					<div class = "profileLayerCategory">
-						<h3 style = "text-align : left; margin-left : 20px;"> category </h3>
-						<div class = "categoryStyle">
-						<div style = "margin-left : 6px; margin-right : 6px; border-bottom : 1px solid #C9C9C9"></div>
-						[##_category_list_##]
+			<div style = "display : flex; flex-direction : column; width : 100%;">
+				<div style = "margin-left : 0.5em; display : flex; flex-direction : row; height : 65px; width : 90%; justify-content : left;"> 
+					<div style = "margin-top:0.7em;"><img src = "[##_image_##]" class = "profileLayerImage"/></div>
+					<div style = "display : flex; flex-direction : column; width : 90%; justify-content : left; margin-top:0.8em; ">
+						<div style = "margin-left : 0.5em; display : table; height : 65px;">
+							<div class = "profileLayerNameTag"> <b>[##_blogger_##]</b> <br> [##_desc_##] <br> </div>
 						</div>
 					</div>
-				</s_sidebar_element>
-				<!-- END 카테고리 -->
-			</s_sidebar>
+
+				</div>
+			</div>
 		</div>
-		
+		</a>
 		<div class = "cardLayer">
 			<!-- 카드 템플릿 아래에 복붙으로 적용가능-->
 			<!--
-			<a href = "이동할 사이트 주소" class = "card">
+			<a href = "이동할 사이트 주소" class = "card link">
 				<img src = "이미지 링크" class = "cardImage"/>
 				<div class = "cardLetter">
 					<div><b style = "font-size:14px"> 카드 이름 </b><br><div style = "font-size: 12px"> 설명 </div></div>
@@ -138,7 +237,7 @@
 			-->
 			
 			<!-- card -->
-			<a href = "https://github.com" class = "card">
+			<a href = "https://github.com/devxb" class = "card link">
 				<img src = "https://cdn.pixabay.com/photo/2014/07/15/23/36/github-394322_960_720.png" class = "cardImage"/>
 				<div class = "cardLetter">
 					<div><b style = "font-size:14px">[Github]</b><br><div style = "font-size: 12px">Devxb's Github</div></div>
@@ -147,10 +246,10 @@
 			<!-- END card -->
 			
 			<!-- card -->
-			<a href = "https://github.com/devxb" class = "card">
+			<a href = "https://github.com/devxb" class = "card link">
 				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
 				<div class = "cardLetter">
-					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully</div></div>
+					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully<br>깃 허브 커밋기록을 예쁘게 꾸미는 프로젝트</div></div>
 				</div>
 			</a>
 			<!-- END card -->
