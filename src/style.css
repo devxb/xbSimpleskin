@@ -106,10 +106,16 @@
 			height : 100%;
 			margin-top : 0.625em;
 			width : 100%;
-			max-width : 90em;
+			max-width : 100%;
 			justify-content : center;
 		}
 		
+		@media screen and (min-width : 50em){
+			.index{
+				max-width : 75%;
+			}
+		}
+
 		.blogName{
 			font-family : 'Noto Sans KR', sans-serif;
 			font-size : 1.125em;
