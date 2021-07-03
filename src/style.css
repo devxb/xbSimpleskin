@@ -1,25 +1,33 @@
 
-		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-		
 		@keyframes cardAnimation{
 			0%{
 				box-shadow : 0px 0px 2px rgb(0,0,0,0.5);
 			}
 			100%{
-				box-shadow : 0px 0px 7px rgb(0,0,0,0.5);
+				box-shadow : 0px 0px 0.4375em rgb(0,0,0,0.5);
 			}
 		}
 		
-		@keyframe articleImageGrow{
+		@keyframes articleImageGrow{
 			0%{
-				width : 40px;
-				height : 40px;
+				width : 2.5em;
+				height : 2.5em;
 			}
 			100%{
-				width : 100px;
-				height : 100px;
+				width : 6.25em;
+				height : 6.25em;
 			}
 		}
+		
+		@keyframes slideDown{
+			0%{
+				height : 0em;
+			}
+			100%{
+				height : 18.75em;
+			}
+		}
+		
 		/* body */
 		
 		body{
@@ -27,16 +35,16 @@
 		}
 		
 		body::-webkit-scrollbar { 
-    	display: none;
-    	width: 0 !important;
+    		display: none;
+    		width: 0 !important;
 		}
 		
 		input:focus {
-    	outline: none;
+    		outline: none;
 		}
 		
 		textarea:focus {
-   	 outline: none;
+   	 		outline: none;
 		}
 		
 		/* END body */
@@ -44,56 +52,17 @@
 		/* upperBar */
 		.upperBar{
 			background-color : white;
-			height : 60px;
+			height : 3.75em;
 			width : 100%;
 			display : flex;
 			flex-direction : row;
-			justify-content : space-between;
-			border-bottom: 1px solid rgb(0,0,0,0.3);
-		}
-		
-		.upperCategory{
-			margin-right : 80px;
-			overflow : visible;
-			z-index : 100;
-			display : table;
-			height : 100%;
-		}
-		
-		.upperCategoryText{
-			display : table-cell;
-			vertical-align : middle;
-			z-index : 200;
-		}
-		
-		.upperinput {
-			display : none;
-		}
-
-		.upperlabel {
-    	cursor: pointer;
-			font-family : 'Noto Sans KR', sans-serif;
-			font-weight : 500;
-			font-size : 15px;
-		}
-
-		.submenu {
-    	display : none;
-    	background: white;
-			height : auto;
-			width : auto;
-			padding : 5px 5px 5px 5px;
-			margin-top : 40px;
-			box-shadow : 0px 0px 5px rgb(0,0,0,0.5);
-			font-family : 'Noto Sans KR', sans-serif;
-			font-size : 12px;
-			font-weight : 300;
-			text-align : left;
+			justify-content : space-around;
+			border-bottom: 0.0625em solid rgb(0,0,0,0.3);
 		}
 		
 		#menuBtn:checked ~ .upperCategoryText {
     	position : absolute;
-			margin-top : 21px;
+			margin-top : 1.3125em;
 		}
 		
 		#menuBtn:checked ~ .submenu {
@@ -123,43 +92,46 @@
 		}
 		
 		.bodyLayer{
+			background-color : white;
 			display : flex;
-			height : 90%;
+			height : 90vh;
 			justify-content : center;
 		}
 		
 		.index{
+			background-color : white;
 			display : flex;
 			flex-direction : row;
 			flex-wrap : nowrap;
 			height : 100%;
-			margin-top : 10px;
+			margin-top : 0.625em;
 			width : 100%;
-			max-width : 1080px;
+			max-width : 90em;
 			justify-content : center;
 		}
 		
 		.blogName{
 			font-family : 'Noto Sans KR', sans-serif;
-			font-size : 18px;
-			margin-left : 80px;
+			font-size : 1.125em;
 		}
 		
 		/* 사이드바 - 프로필 레이어, 카드 레이어 있음*/
 		
 		.sidebar{
-			width : 300px;
+			font-family : 'Noto Sans KR', sans-serif;
+			width : 18.75em;
+			background-color : white;
 			text-align : right;
 		}
 		
 		/* 프로필 레이어 */
 		.profileLayer{
 			background-color : white;
-			border-radius : 5px;
+			border-radius : 0.3125em;
 			width : 100%;
-			margin-left : 5px;
-			max-width : 300px;
-			height : 85px;
+			margin-left : 0.3125em;
+			max-width : 18.75em;
+			height : 4.3125em;
 			display : flex;
 			box-shadow : 0px 0px 2px rgb(0,0,0,0.5);
 			text-align : left;
@@ -167,22 +139,22 @@
 		}
 		
 		.profileLayer:hover{
-			box-shadow : 0px 0px 7px rgb(0,0,0,0.5);
+			box-shadow : 0px 0px 0.4375em rgb(0,0,0,0.5);
 			animation : cardAnimation 0.1s;
-			min-height : 85px;
+			min-height : 4.3125em;
 			height : auto;
 		}
 		
 		.profileLayerImage{
-			height : 65px;
-			width : 65px;
-			border-radius : 50px;
+			height : 3.4375em;
+			width : 3.4375em;
+			border-radius : 3.125em;
 		}
 		
 		.profileLayerNameTag{
 			font-family : 'Noto Sans KR', sans-serif;
 			font-weight : 500;
-			font-size : 16px;
+			font-size : 0.8em;
 			display : table-cell;
 			vertical-align : middle;
 			overflow : hidden;
@@ -192,7 +164,7 @@
 		.cardLayer{
 			position : relative;
 			width : 100%;
-			padding : 0px 5px 5px 5px;
+			padding : 0em 0.3125em 0.3125em 0.3125em;
 			overflow-y : scroll;
 			-ms-overflow-style: none;
 			display : inline-block;
@@ -209,19 +181,19 @@
 			position : relative;
 			z-index : 0;
 			display : inline-block;
-			border-radius : 5px;
-			margin-top : 10px;
+			border-radius : 0.3125em;
+			margin-top : 0.625em;
 			width : 100%;
-			max-width : 300px;
-			height : 200px;
+			max-width : 18.75em;
+			height : 12.5em;
 			background-color : white;
-			box-shadow : 0px 0px 2px rgb(0,0,0,0.5);
+			box-shadow : 0em 0em 0.125em rgb(0,0,0,0.5);
 		}
 		
 		.card:hover{
 			/*margin-top : -0px;
 			margin-bottom : 10px;*/
-			box-shadow : 0px 0px 7px rgb(0,0,0,0.5);
+			box-shadow : 0px 0px 0.4375em rgb(0,0,0,0.5);
 			animation : cardAnimation 0.1s;
 			z-index : 1;
 		}
@@ -229,26 +201,25 @@
 		.cardImage{
 			display: block;
 			overflow-y : scroll;
-			border-radius : 5px 5px 0px 0px;
+			border-radius : 0.3125em 0.3125em 0px 0px;
 			margin-top : 0px;
 			width : 100%;
-			height : 140px;
-			
-			object-fit : contain;
+			height : 8.75em;
+			object-fit : fit;
 		}
 		
 		.cardLetter{
 			display : block;
 			overflow : hidden;
-			border-radius : 0px 0px 10px 10px;
-			padding : 0px 0px 0px 5px;
+			border-radius : 0px 0px 0.625em 0.625em;
+			padding : 0px 0px 0px 0.3125em;
 			margin-top : 0px;
 			width : auto;
-			height : 60px;
+			height : 3.75em;
 			text-align : left;
 			font-family : 'Noto Sans KR', sans-serif;
 			font-weight : 400;
-			font-size : 13px;
+			font-size : 0.8125em;
 		}
 		
 		/* 인덱스 페이지 */
@@ -256,7 +227,7 @@
 		.indexLayerWrapper{
 			width : 90%;
 			height : 100%;
-			margin-right : 50px;
+			margin-right : 3.125em;
 			background-color : white;
 			-ms-overflow-style: none;
 			overflow-y : scroll;
@@ -279,9 +250,9 @@
 		
 		.articleLink{
 			width : 99%;
-			height : 230px;
-			border-radius : 5px;
-			margin-left : 6px;
+			height : 14.375em;
+			border-radius : 0.3125em;
+			margin-left : 0.375em;
 			display : inline-block;
 			/*margin-top : -20px;*/
 		}
@@ -293,7 +264,7 @@
 			width : 100%;
 			height : 100%;
 			background-color : white;
-			border-bottom : 1px solid #C9C9C9;
+			border-bottom : 0.0625em solid #C9C9C9;
 			z-index : 0;
 		}
 		
@@ -320,21 +291,21 @@
 		
 		.articleImage{
 			align-self : center;
-			border-radius : 5px;
-			width : 150px;
-			height : 150px;
-			min-width : 150px;
-			min-height : 150px;
+			border-radius : 0.3125em;
+			width : 9.375em;
+			height : 9.375em;
+			min-width : 9.375em;
+			min-height : 9.375em;
 			overflow : hidden;
-			padding-left : 20px;
-			padding-right : 20px;
+			padding-left : 1.25em;
+			padding-right : 1.25em;
 			object-fit : contain;
 		}
 		
 		.articleTitle{
-			margin-top : 15px;
-			margin-left : 2px;
-			font-size : 16px;
+			margin-top : 0.375em;
+			margin-left : 0.125em;
+			font-size : 1.3em;
 			font-family : 'Noto Sans KR', sans-serif;
 			font-weight : 500;
 			width : 100%;
@@ -356,16 +327,16 @@
 			color : #C9C9C9;
 			font-family : 'Noto Sans KR', sans-serif;
 			font-weight : 300;
-			font-size : 13px;
+			font-size : 0.8125em;
 			display: table-cell; 
 			vertical-align: middle; 
 			word-break : break-all;
-			height: 130px;
+			height: 8.125em;
 		}
 		
 		.articleBodyTail{
-			font-size : 13px;
-			margin-top : 6px;
+			font-size : 0.8125em;
+			margin-top : 0.375em;
 			width : 100%;
 			height : 10%;
 			overflow : hidden;
@@ -376,12 +347,12 @@
 			font-family : 'Noto Sans KR', sans-serif;
 			font-weight : 300;
 			color : #C9C9C9;
-			font-size : 12px;
+			font-size : 0.8125em;
 		}
 		
 		.articleCategory{
 			color : #C9C9C9;
-			font-size : 12px;
+			font-size : 0.8125em;
 			font-family : 'Noto Sans KR', sans-serif;
 			font-weight : 300;
 		}
@@ -390,7 +361,7 @@
 		
 		.permalinkWrapper{
 			width : 100%;
-			margin-top : 20px;
+			margin-top : 1.25em;
 		}
 		
 		.permalinkLine{
@@ -402,27 +373,27 @@
 			color : #C9C9C9;
 			width : 100%;
 			text-align : center;
-			font-size : 14px;
+			font-size : 0.875em;
 			font-family : 'Noto Sans KR', sans-serif;
-			font-weight : 500px;
+			font-weight : 500;
 		}
 		
 		.permalinkTitle{
 			color : #000000;
 			width : 100%;
 			text-align : center;
-			font-size : 25px;
+			font-size : 1.5625em;
 			font-family : 'Noto Sans KR', sans-serif;
-			font-weight : 600px;
+			font-weight : 600;
 		}
 		
 		.permalinkInfo{
 			color : #C9C9C9;
 			width : 100%;
 			text-align : center;
-			font-size : 14px;
+			font-size : 0.875em;
 			font-family : 'Noto Sans KR', sans-serif;
-			font-weight : 500px;
+			font-weight : 500;
 		}
 		
 		.permalinkText{
@@ -435,9 +406,9 @@
 		.permalinkTag{
 			color : #C9C9C9;
 			text-align : left;
-			font-size : 14px;
+			font-size : 0.875em;
 			font-family : 'Noto Sans KR', sans-serif;
-			font-weight: 500px;
+			font-weight: 500;
 		}
 		
 		.permalinkBottom{
@@ -459,16 +430,16 @@
 			align-self : center;
 			resize : none;
 			font-family : 'Noto Sans KR', sans-serif;
-			font-weight : 200px;
+			font-weight : 200;
 			color : black;
 		}
 		
 		.permalinkCommentSubmit{
 			width : auto;
-			height : 40px;
+			height : 2.5em;
 			background-color : white;
 			font-family : 'Noto Sans KR', sans-serif;
-			font-weight : 300px;
+			font-weight : 300;
 			border : 1px solid #C9C9C9;
 			margin-right : 0px;
 			text-align : center;
@@ -486,7 +457,7 @@
 			background-color : white;
 			text-align : left;
 			font-family : 'Noto Sans KR', sans-serif;
-			font-weight : 300px;
+			font-weight : 300;
 		}
 		
 		/* 사용자 댓글 */
@@ -497,48 +468,48 @@
 			justify-content : center;
 			width : 100%;
 			height : auto;
-			border-bottom : 1px solid #C9C9C9;
-			padding-top : 5px;
-			padding-bottom : 5px;
+			border-bottom : 0.0625em solid #C9C9C9;
+			padding-top : 0.3125em;
+			padding-bottom : 0.3125em;
 		}
 		
 		.userComment:hover{
-			border-bottom : 1px solid rgb(0,0,0,0);
+			border-bottom : 0.0625em solid rgb(0,0,0,0);
 			box-shadow : 0px 0px 2px rgb(0,0,0,0.5);
 		}
 		
 		.userCommentReply:hover{
-			border-bottom : 1px solid rgb(0,0,0,0.2);
-			border-top: 1px solid rgb(0,0,0,0.2);
+			border-bottom : 0.0625em solid rgb(0,0,0,0.2);
+			border-top: 0.0625em solid rgb(0,0,0,0.2);
 		}
 		
 		.userCommentHeader{
 			width : 100%;
-			padding-top : 5px;
-			padding-bottom : 5px;
-			height : 25px;
+			padding-top : 0.3125em;
+			padding-bottom : 0.3125em;
+			height : 1.5625em;
 			display : flex;
 			justify-content : left;
 			font-family : 'Noto Sans KR', sans-serif;
-			font-weight : 300px;
-			font-size : 14px;
+			font-weight : 300;
+			font-size : 0.875em;
 		}
 		
 		.userCommentHeaderLogo{
 			overflow : hidden;
-			border-radius : 50px;
-			width : 45px;
-			height : 45px;
+			border-radius : 3.125em;
+			width : 2.8125em;
+			height : 2.8125em;
 		}
 		
 		.userCommentHeaderNameWrapper{
 			display : table;
 			width : 100%;
-			margin-left : 10px;
+			margin-left : 0.625em;
 		}
 		
 		.userCommentHeaderName{
-			height : 25px;
+			height : 1.5625em;
 			width : 100%;
 			display: table-cell; 
 			vertical-align: middle;
@@ -546,12 +517,12 @@
 		}
 		
 		.userCommentBody{
-			padding-bottom : 5px;
+			padding-bottom : 0.3125em;
 			height : auto;
-			margin-left : 55px;
+			margin-left : 3.4375em;
 			font-family : 'Noto Sans KR', sans-serif;
 			font-weight : 400;
-			font-size : 12px;
+			font-size : 0.75em;
 		}
 		
 		.commentControl{
@@ -559,7 +530,7 @@
 			text-align : right;
 			font-family : 'Noto Sans KR', sans-serif;
 			font-weight : 400;
-			font-size : 12px;
+			font-size : 0.75em;
 			color : #C9C9C9;
 		}
 		
@@ -604,3 +575,46 @@
 			
 		}
 		*/
+		
+		.categoryInput {
+    	  	position:fixed; 
+    	  	left:-99999999px;
+			z-index : 4;
+			cursor: pointer;
+    	}
+	
+		label{
+			cursor : pointer;
+		}
+		
+		input[type="checkbox"]{
+	    	display : none;
+		}
+		
+	    .box {
+			position : absolute;
+			display : none;
+			height : auto;
+			max-height : 90vh;
+			padding-top : 0.5em;
+			padding-bottom : 0.5em;
+			margin-top : 1.25em;
+			margin-left : -100%;
+			background-color : white;
+			border : 0.0625em solid #C9C9C9;
+			z-index : 5;
+			font-size : 0.7em;
+			overflow : scroll;
+			-ms-overflow-style: none;
+	    }
+		
+		.box::-webkit-scrollbar { 
+	    	display: none;
+	    	width: 0 !important;
+		}
+		
+ 
+    	:checked ~ .box { /* 일반 형제 선택 */
+			display : block;
+	        width : 300% !important;
+	    }

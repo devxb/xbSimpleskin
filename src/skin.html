@@ -1,16 +1,21 @@
-<html>
+<!DOCTYPE html>
+
+<html lang = "ko">
 <head>
   <title>[##_page_title_##]</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body id='[##_body_id_##]' style = "background-color : rgb(255,255,255)">
 <s_t3>
 	<header>
 	<!-- 상단 네비게이션 바 -->
   <div class = "upperBar">
-			<h3 class = "blogName">
-    		<a href="[##_blog_link_##]" class = "link">[##_title_##]</a>
-			</h3>
+		<div style = "display : table; height : 90%; width : auto;">
+			<div style = "display : table-cell; vertical-align : middle;">
+				<b><a href="[##_blog_link_##]" class = "blogName link">[##_title_##]</a></b>
+			
+				</div>
+		</div>
     <!-- 검색 바 -->
 		<!--
 		<div class = upperCategory>
@@ -23,7 +28,21 @@
        	</div>
 		</div>
 		-->
-  </div>
+		<div style = "display : table; height : 90%; width : auto; position : relative;">
+		<div style = "display : table-cell; vertical-align : middle; font-family : 'Noto Sans KR', sans-serif; font-weight : 500; font-size : 1.125em;">
+			<b>
+			<input type="checkbox" id="toggleBtn" />
+        <label for="toggleBtn">
+            Category
+        </label>
+				<div class="box"> 
+					[##_category_list_##]
+				</div> 
+			</b>
+		</div>
+		</div>
+  </div> 
+	<!-- 상단 카테고리 -->
 	</header>
 	<div class = "bodyLayer">
 	<div class = "index">
@@ -135,7 +154,7 @@
 																	<div class = "userCommentHeaderNameWrapper">
 																		<div class = "userCommentHeaderName">
             													[##_rp_rep_name_##]
-            													<span style = "color : #C9C9C9; font-size : 11px;">[##_rp_rep_date_##]</span>
+            													<span style = "color : #C9C9C9; font-size : 0.6875em;">[##_rp_rep_date_##]</span>
 																		</div>
 																	</div>
 																</div>
@@ -160,7 +179,7 @@
 																	<div class = "userCommentHeaderNameWrapper">
 																		<div class = "userCommentHeaderName">
             													[##_rp_rep_name_##]
-            													<span style = "color : #C9C9C9; font-size : 11px;">[##_rp_rep_date_##]</span>
+            													<span style = "color : #C9C9C9; font-size : 0.6875em;">[##_rp_rep_date_##]</span>
 																		</div>
 																	</div>
 																</div>
@@ -213,11 +232,11 @@
 		<a href="[##_blog_link_##]" class = "link">
 		<div class = "profileLayer">
 			<div style = "display : flex; flex-direction : column; width : 100%;">
-				<div style = "margin-left : 0.5em; display : flex; flex-direction : row; height : 65px; width : 90%; justify-content : left;"> 
-					<div style = "margin-top:0.7em;"><img src = "[##_image_##]" class = "profileLayerImage"/></div>
-					<div style = "display : flex; flex-direction : column; width : 90%; justify-content : left; margin-top:0.8em; ">
-						<div style = "margin-left : 0.5em; display : table; height : 65px;">
-							<div class = "profileLayerNameTag"> <b>[##_blogger_##]</b> <br> [##_desc_##] <br> </div>
+				<div style = "margin-left : 0.5em; display : flex; flex-direction : row; height : 4.0625em; width : 90%; justify-content : left;"> 
+					<div style = "margin-top:0.5em;"><img src = "[##_image_##]" class = "profileLayerImage"/></div>
+					<div style = "display : flex; flex-direction : column; width : 90%; justify-content : left; margin-top:0.2em; ">
+						<div style = "margin-left : 0.5em; display : table; height : 4.0625em;">
+							<div class = "profileLayerNameTag"> <b>[##_blogger_##]</b> <br> <div style = "color : #C9C9C9;">[##_desc_##]</div></div>
 						</div>
 					</div>
 
@@ -231,27 +250,15 @@
 			<a href = "이동할 사이트 주소" class = "card link">
 				<img src = "이미지 링크" class = "cardImage"/>
 				<div class = "cardLetter">
-					<div><b style = "font-size:14px"> 카드 이름 </b><br><div style = "font-size: 12px"> 설명 </div></div>
+					<div><b style = "font-size:1em"> 카드 이름 </b><br><div style = "font-size: 0.75em"> 설명 </div></div>
 				</div>
 			</a>
 			-->
 			
 			<!-- card -->
-			<a href = "https://github.com/devxb" class = "card link">
-				<img src = "https://cdn.pixabay.com/photo/2014/07/15/23/36/github-394322_960_720.png" class = "cardImage"/>
-				<div class = "cardLetter">
-					<div><b style = "font-size:14px">[Github]</b><br><div style = "font-size: 12px">Devxb's Github</div></div>
-				</div>
-			</a>
 			<!-- END card -->
 			
 			<!-- card -->
-			<a href = "https://github.com/devxb" class = "card link">
-				<img src = "https://user-images.githubusercontent.com/62425964/119244836-626e5180-bbaf-11eb-9d52-5e471030425e.png" class = "cardImage"/>
-				<div class = "cardLetter">
-					<div><b style = "font-size:14px">[개인 프로젝트]</b><br><div style = "font-size: 12px">Manage your commit history beautifully<br>깃 허브 커밋기록을 예쁘게 꾸미는 프로젝트</div></div>
-				</div>
-			</a>
 			<!-- END card -->
 			
 		</div>
