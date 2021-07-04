@@ -593,7 +593,7 @@
 			cursor : pointer;
 		}
 		
-		input[type="checkbox"]{
+		.upperInput[type="checkbox"]{
 	    	display : none;
 		}
 		
