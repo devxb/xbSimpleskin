@@ -31,7 +31,7 @@
 		<div style = "display : table; height : 90%; width : auto; position : relative;">
 		<div style = "display : table-cell; vertical-align : middle; font-family : 'Noto Sans KR', sans-serif; font-weight : 500; font-size : 1.125em;">
 			<b>
-			<input type="checkbox" id="toggleBtn" />
+			<input type="checkbox" id="toggleBtn" class = "upperInput"/>
         <label for="toggleBtn">
             Category
         </label>
@@ -114,30 +114,17 @@
 								<s_rp>
 									<s_rp_input_form>
   									<div style = "width : 100%;">
-    									<s_rp_member>
-      									<s_rp_guest>
-        									<p>
-          									<input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" />
-         										<label for="name"> : 이름 </label>
-        									</p>
-        									<p>
-          									<input type="password" maxlength="8" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" />
-          									<label for="password"> : 패스워드 </label>
-        									</p>
-        									<p>
-          									<input type="text" class="homepage" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" />
-          									<label for="homepage"> : 홈페이지 </label>
-        									</p>
-      									</s_rp_guest>
+    									
+										<p class = "permalinkCommentTitle"> 댓글 </p>
+    								<p style = "width : 100%; text-align : center">
+      								<textarea name="[##_rp_input_comment_##]" rows="10" cols="50" class = "permalinkCommentInput" style = "display:inline-block"></textarea>
+    								</p>
+											<s_rp_member>
       									<p class="secretWrap">
         									<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" />
         									<label for="secret"> 비밀글 </label>
       									</p>
     									</s_rp_member>
-										<p class = "permalinkCommentTitle"> 댓글 </p>
-    								<p style = "width : 100%; text-align : center">
-      								<textarea name="[##_rp_input_comment_##]" rows="10" cols="50" class = "permalinkCommentInput" style = "display:inline-block"></textarea>
-    								</p>
     								<p style = "width : 100%; text-align : right">
       								<input type="submit" value="댓글 달기" onclick="[##_rp_onclick_submit_##]" class = "permalinkCommentSubmit"/>
     								</p>
@@ -254,13 +241,6 @@
 				</div>
 			</a>
 			-->
-			
-			<!-- card -->
-			<!-- END card -->
-			
-			<!-- card -->
-			<!-- END card -->
-			
 		</div>
 		
 	</div>
